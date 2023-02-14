@@ -25,9 +25,6 @@ namespace Backend.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            Country country = new Country("Bangladesh");
-            this._context.Country.Add(country);
-            this._context.SaveChanges();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
